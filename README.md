@@ -1,5 +1,5 @@
 # Chat Log Server
-A Spring(java) based microservice to save/retrieve chat logs on the server.
+A Spring(java) based microservice to save/retrieve chat logs on/from the server.
 
 This server presents an HTTP interface with the following commands. 
 
