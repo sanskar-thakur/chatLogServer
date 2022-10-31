@@ -3,7 +3,7 @@ A Spring(java) based microservice to save/retrieve chat logs on/from the server.
 
 This server presents an HTTP interface with the following commands. 
 
-## POST /chatlogs/{user}
+### POST /chatlogs/{user}
 Creates a new chatlog entry for the user with userID as {user}. <br />
 The POST data can either be url encoded or JSON encoded. <br />
 <br />
@@ -14,7 +14,7 @@ The data contains the following fields: <br />
 <br />
 The response from the message is a unique messageID that we can refer to the message by.
 
-## GET /chatlogs/{user}
+### GET /chatlogs/{user}
 Returns chatlogs for the given user. <br />
 These are returned in reverse timeorder (most recent messages first). <br />
 <br />
@@ -23,9 +23,15 @@ Takes two optional parameters. <br />
 ■ start - a key of the same type as messageID to determine where to start from.  <br />
 This is to help implement pagination. If not set, it returns the most recent messages. <br />
 
-## DELETE /chatlogs/{user} 
+### DELETE /chatlogs/{user} 
 Deletes all the chat logs for a given user. 
 
-## DELETE /chatlogs/{user}/{msgid}
+### DELETE /chatlogs/{user}/{msgid}
 Delete just the given chatlog for a given user. <br />
 Returns an appropriate HTTP error response if the msgid is not found.
+<br />
+
+## Pre-requisites
+1. The project uses PostgreSQL as data store for chat logs.
+1. The project requires a database server (postgreSQL) running on the host machine.
+1. Run db script from the project (create_db.sql) to create required db schemas.
